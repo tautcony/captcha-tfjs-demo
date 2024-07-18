@@ -1,0 +1,10 @@
+# train data files
+data/
+
+# generated files
+dataset/
+processed/
+
+# model files
+*.h5
+tfjs_model/

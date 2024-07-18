@@ -1,0 +1,12 @@
+[MAIN]
+
+extension-pkg-allow-list=cv2,tensorflow,tensorflowjs,numpy,tensorflow_addons
+
+disable=
+    missing-module-docstring,
+    missing-function-docstring,
+    invalid-name,
+    line-too-long,
+
+[TYPECHECK]
+generated-members=cv2.*,numpy.*,tensorflow.*,tensorflowjs.*,tf.*,tensorflow_addons.*

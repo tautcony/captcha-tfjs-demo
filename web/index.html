@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TensorFlow.js OCR with AlexNet</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="script.js" defer></script>
+  <style>
+    canvas {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="imageUpload" accept="image/*" />
+  <canvas id="canvas" style="display: none;"></canvas>
+  <p>Predicted Captcha: <span id="prediction"></span></p>
+  <div id="imageContainer">
+    <h2>Original Image</h2>
+    <canvas id="originalCanvas0"></canvas>
+    <canvas id="originalCanvas1"></canvas>
+    <canvas id="originalCanvas2"></canvas>
+    <canvas id="originalCanvas3"></canvas>
+    <h2>Binary Image</h2>
+    <canvas id="binaryCanvas0"></canvas>
+    <canvas id="binaryCanvas1"></canvas>
+    <canvas id="binaryCanvas2"></canvas>
+    <canvas id="binaryCanvas3"></canvas>
+  </div>
+</body>
+</html>
