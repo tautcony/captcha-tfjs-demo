@@ -87,7 +87,7 @@ async function predict() {
           )
         ).then((predictions) => {
           const captcha = predictions
-            .map((p) => String.fromCharCode(p[0] + 48))
+            .map((p) => String.fromCharCode(p[0]))
             .join("");
           document.getElementById("prediction").innerText = captcha;
           console.log(`Prediction: ${captcha} in ${startTime - Date.now()}ms`);

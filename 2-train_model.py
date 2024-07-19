@@ -20,7 +20,7 @@ def load_dataset(tfrecord_path):
     dataset = dataset.map(_parse_function)
     return dataset
 
-def build_alexnet(input_shape=(28, 28, 1), num_classes=10):
+def build_alexnet(input_shape=(28, 28, 1), num_classes=64):
     return tf.keras.models.Sequential([
         # Specify the input shape
         tf.keras.layers.InputLayer(input_shape=input_shape),

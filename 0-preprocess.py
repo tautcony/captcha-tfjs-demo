@@ -50,6 +50,8 @@ def main():
     for file_name in os.listdir(data_folder):
         if file_name.endswith(".png"):
             image_name = os.path.splitext(file_name)[0]
+            if "_" in image_name:
+                image_name = image_name.split("_")[0]
             image_path = os.path.join(data_folder, file_name)
             print(f"Processing file: {image_path} -> {image_name}")
             process_captcha(image_path, image_name, "processed")

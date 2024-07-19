@@ -21,7 +21,8 @@ def image_to_tfexample(image_data, label):
 def load_images_and_labels(folder_path):
     images = []
     labels = []
-    label_mapping = {str(i): i for i in range(10)} # assuming digits 0-9
+    sub_dirs = [d for d in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, d))]
+    label_mapping = {d: ord(d) for i, d in enumerate(sub_dirs)}
 
     for label_str, label_num in label_mapping.items():
         digit_folder_path = os.path.join(folder_path, label_str)

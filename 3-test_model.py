@@ -41,11 +41,10 @@ def predict_characters(model, characters):
         predictions.append(predicted_label[0])
     return predictions
 
-
 def predict_captcha(model, image_path):
     characters = segment_captcha(image_path)
     predictions = predict_characters(model, characters)
-    result = "".join(map(str, predictions))
+    result = "".join(map(chr, predictions))
     return result
 
 def main():
