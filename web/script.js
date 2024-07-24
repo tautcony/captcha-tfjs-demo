@@ -23,7 +23,7 @@ function preprocessImage(imageElement, index) {
   const grayData = tf.image.rgbToGrayscale(data);
 
   // Binarization processing (thresholding)
-  const threshold = 128;
+  const threshold = 127;
   const binaryData = grayData.greater(tf.scalar(threshold)).toFloat();
 
   const invertedBinaryData = tf.scalar(1).sub(binaryData);
@@ -90,7 +90,7 @@ async function predict() {
             .map((p) => String.fromCharCode(p[0]))
             .join("");
           document.getElementById("prediction").innerText = captcha;
-          console.log(`Prediction: ${captcha} in ${startTime - Date.now()}ms`);
+          console.log(`Prediction: ${captcha} in ${Date.now() - startTime}ms`);
         });
       };
       img.src = reader.result;

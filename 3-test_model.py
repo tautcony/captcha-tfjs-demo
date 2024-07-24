@@ -15,7 +15,7 @@ def preprocess_image(image, target_size=(28, 28)):
 def segment_captcha(image_path, num_chars=4):
     """ Segment the captcha image into individual characters """
     image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    _, binary_image = cv2.threshold(image, 128, 255, cv2.THRESH_BINARY_INV)
+    _, binary_image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY_INV)
 
     img_height, img_width = binary_image.shape
     num_width = img_width // num_chars
